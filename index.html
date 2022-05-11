@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculatrice de salaire</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="root">
+      <h1>Calculatrice de salaire</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Brut</th>
+            <th>Net</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Annuel</th>
+            <td>
+              <input
+                type="number"
+                @input="editAnnualGross"
+                :value="annualGross"
+              />€
+            </td>
+            <td>{{annualNet}}€</td>
+          </tr>
+          <tr>
+            <th>Mensuel</th>
+            <td>{{monthlyGross}}€</td>
+            <td>{{monthlyNet}}€</td>
+          </tr>
+        </tbody>
+      </table>
+      <input id="cadre" type="checkbox" @change="onChangeCadre" />
+      <label for="cadre">Cadre</label>
+    </div>
+  </body>
+</html>
